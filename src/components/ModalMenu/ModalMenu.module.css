@@ -1,0 +1,108 @@
+.modalWrapper {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  top: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  padding: 4px 5px 3px 4px;
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  gap: 10px;
+}
+.modalIsOpen {
+  transform: translateX(0);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  border: none;
+  background: transparent;
+  padding: 8px;
+  transition: transform 150ms ease-in-out;
+}
+.closeBtn:active {
+  transform: rotateZ(60deg);
+}
+
+.closeIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.wrapper {
+  max-width: 194px;
+}
+
+.userInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.userIcon {
+  width: 70px;
+  height: 70px;
+}
+
+.userName {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.modalFuncList {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0, 0, 0, 0.354);
+  border-right: 1px solid rgba(0, 0, 0, 0.354);
+  border-left: 1px solid rgba(0, 0, 0, 0.354);
+  border-radius: 3px;
+}
+
+.modalFuncItem {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.354);
+  font-size: 16px;
+  padding: 3px;
+  background-color: rgba(108, 109, 111, 0.397);
+}
+
+.modalFuncItem:hover {
+  color: rgb(214, 90, 46);
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  color: inherit;
+  padding: 0;
+  width: 100%;
+  text-align: start;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icons {
+  width: 16px;
+  height: 16px;
+}

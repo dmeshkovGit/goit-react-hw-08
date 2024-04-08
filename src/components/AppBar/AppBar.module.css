@@ -1,0 +1,44 @@
+.barWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.354);
+  border-radius: 3px;
+  padding: 4px 5px 3px 4px;
+  -webkit-box-shadow: 0px 9px 5px -5px rgba(0, 0, 0, 0.46);
+  -moz-box-shadow: 0px 9px 5px -5px rgba(0, 0, 0, 0.46);
+  box-shadow: 0px 9px 9px -5px rgba(0, 0, 0, 0.46);
+}
+.homeLink {
+  width: 0;
+}
+.appIcon {
+  width: 37px;
+  height: 37px;
+  color: black;
+  padding: 0;
+}
+
+.appIcon:hover,
+.userIcon:hover {
+  color: rgb(214, 90, 46);
+}
+
+.userIcon {
+  width: 37px;
+  height: 37px;
+  color: black;
+}
+
+.modalBtn {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.logInIcon {
+  width: 37px;
+  height: 37px;
+  color: black;
+  padding: 0;
+}
