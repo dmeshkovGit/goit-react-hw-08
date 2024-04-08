@@ -20,8 +20,8 @@ export default function ModalMenu({isOpen, switchModal}) {
     
     return (
         <div className={clsx(css.modalWrapper, isOpen && css.modalIsOpen)}>
-
-            <button className={css.closeBtn} type='button' onClick={() => switchModal()}><IoClose className={css.closeIcon} /></button>
+            <div className={css.modalContentWrapper}>
+        <button className={css.closeBtn} type='button' onClick={() => switchModal()}><IoClose className={css.closeIcon} /></button>
 
          <div className={css.wrapper}>
               <div className={css.userInfoWrapper}>
@@ -42,6 +42,7 @@ export default function ModalMenu({isOpen, switchModal}) {
           </li>
             </ul>
             </div>
+     </div>
         </div>
     )
 }

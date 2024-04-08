@@ -8,6 +8,8 @@
 }
 
 .homeWrapper {
+  margin: 0 auto;
+  max-width: 410px;
   display: flex;
   flex-direction: column;
   gap: 8px;

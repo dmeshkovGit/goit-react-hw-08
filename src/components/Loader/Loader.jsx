@@ -8,7 +8,7 @@ export default function Loader() {
   height="40"
   width="40"
   borderColor="black"
-  color="#4fa94d"
+  color="#d65a2e"
   ariaLabel="progress-bar-loading"
   wrapperClass={css.wrapper}
 />)

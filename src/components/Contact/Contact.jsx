@@ -1,6 +1,6 @@
 import css from './Contact.module.css'
 import { FaPhoneAlt } from "react-icons/fa";
-import { IoPerson } from "react-icons/io5";
+import { IoPerson, IoPersonAdd } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
 

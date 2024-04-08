@@ -1,4 +1,6 @@
 .barWrapper {
+  margin: 0 auto;
+  max-width: 410px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,20 +15,26 @@
   width: 0;
 }
 .appIcon {
-  width: 37px;
-  height: 37px;
+  width: 30px;
+  height: 30px;
   color: black;
-  padding: 0;
 }
 
 .appIcon:hover,
-.userIcon:hover {
+.userIcon:hover,
+.logInIcon:hover {
   color: rgb(214, 90, 46);
 }
 
+.title {
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+}
+
 .userIcon {
-  width: 37px;
-  height: 37px;
+  width: 30px;
+  height: 30px;
   color: black;
 }
 
@@ -37,8 +45,8 @@
 }
 
 .logInIcon {
-  width: 37px;
-  height: 37px;
+  width: 30px;
+  height: 30px;
   color: black;
   padding: 0;
 }

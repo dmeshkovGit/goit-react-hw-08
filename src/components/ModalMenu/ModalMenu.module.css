@@ -19,6 +19,14 @@
   transform: translateX(0);
 }
 
+.modalContentWrapper {
+  position: relative;
+  width: 410px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .closeBtn {
   position: absolute;
   top: 4px;
@@ -26,13 +34,13 @@
   border: none;
   background: transparent;
   padding: 8px;
-  transition: transform 150ms ease-in-out;
 }
-.closeBtn:active {
-  transform: rotateZ(60deg);
+.closeBtn:active .closeIcon {
+  transform: rotateZ(90deg);
 }
 
 .closeIcon {
+  transition: transform 150ms ease-in-out;
   width: 25px;
   height: 25px;
 }
@@ -103,6 +111,6 @@
 }
 
 .icons {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }

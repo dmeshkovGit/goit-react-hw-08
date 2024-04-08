@@ -9,7 +9,7 @@ import { addContact } from '../../redux/contacts/operations';
 
 
 
-export default function ContactForm({}) {
+export default function ContactForm({switchModal}) {
     const nameFieldId = useId(); 
     const numberFieldId = useId();
     const ContactSchema = Yup.object().shape({
@@ -23,11 +23,11 @@ export default function ContactForm({}) {
             const newContact = { id: nanoid(), name: contactName, number: contactNumber };
             dispatch(addContact(newContact));
             actions.resetForm();
+            switchModal();
         }}>
             <Form className={css.form}>
-
+                <div className={css.inputsWrap}>
                 <div className={css.inputWrapper}>
-
                     <label className={css.inputLabel} htmlFor={nameFieldId}>Name</label>
 
                     <Field className={css.input} type="text" name="contactName" id={nameFieldId}></Field>
@@ -40,8 +40,11 @@ export default function ContactForm({}) {
 
                     <Field className={css.input}  type="phone" name="contactNumber" id={numberFieldId}></Field>
                     
-                    <ErrorMessage className={css.error} name="contactNumber" component="span"/>
-                </div>
+                        <ErrorMessage className={css.error} name="contactNumber" component="span" />  
+                    </div>    
+                 </div>
+                
+                
             
                 <button className={css.submitBtn} type="submit">Add contact</button>
                 

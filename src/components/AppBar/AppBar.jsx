@@ -18,10 +18,11 @@ export default function AppBar() {
     return (
         <div>
             <div className={css.barWrapper}>
-            <Link to="/" className={css.homeLink}><FaCircleInfo className={ 
-                css.appIcon
-            } /></Link>
-                {isLoggedIn ? <button type='button' onClick={() => switchModalIsOpen()} className={css.modalBtn}><FaCircleUser className={css.userIcon} /></button> : <Link to='/login'><FiLogIn className={css.logInIcon} /></Link>}
+            <div><Link to="/" className={css.homeLink}><FaCircleInfo className={css.appIcon} /></Link></div>
+                
+            <h1 className={css.title}>PhoneBook</h1>
+                
+            {isLoggedIn ? <button type='button' onClick={() => switchModalIsOpen()} className={css.modalBtn}><FaCircleUser className={css.userIcon} /></button> : <Link to='/login'><FiLogIn className={css.logInIcon} /></Link>}
             
             </div>
             

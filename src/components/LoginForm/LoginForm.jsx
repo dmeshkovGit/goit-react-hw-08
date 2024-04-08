@@ -2,6 +2,8 @@ import { Field, Form, Formik } from 'formik'
 import css from './LoginForm.module.css'
 import { useDispatch } from 'react-redux';
 import { logIn, logOut } from '../../redux/auth/operations';
+import { Link } from 'react-router-dom';
+
 
 export default function LoginForm() {
     
@@ -13,21 +15,22 @@ export default function LoginForm() {
     }
 
     return (
-        <Formik
+        <div className={css.wrapper}>
+             <Formik 
          initialValues={{ email: "", password: "" }}
          onSubmit={handleSubmit}
         >
             <Form className={css.form}>
-                <label className={css.lable}>
-                    Email
-                    <Field className={css.field} type="email" name="email"/>
-                </label>  
-                <label className={css.lable}>
-                    Password
-                    <Field className={css.field} type="password" name="password"/>
-                </label>  
+                    <h1 className={css.title}>User Login</h1>
+                    <div className={css.fieldWrapper}>
+                    <Field placeholder="Email" className={css.field} type="email" name="email"/>
+                    <Field placeholder="Password" className={css.field} type="password" name="password"/>
+                    </div>
+        <p className={css.registerInfo}>Don't have an account yet? <Link to="/register">Create now</Link></p>
                 <button className={css.btn} type="submit">Login</button>
             </Form>
         </Formik>
+        </div>
+       
     )
 }

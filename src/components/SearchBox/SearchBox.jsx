@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeFilter } from '../../redux/filters/slice'
 import { selectNameFilter } from '../../redux/filters/selectors'
 import css from './SearchBox.module.css'
-
+import { IoSearchCircle } from "react-icons/io5";
 
 
 export default function SearchBox({ }) {
@@ -12,11 +12,11 @@ export default function SearchBox({ }) {
 
     return (
         <div className={css.searchBoxWrapper}>
-            <label className={css.searchBarLabel} htmlFor="searchBar">Find contacts by name</label>
-            <input className={css.searchBarInput} type="text" id='searchBar'
+            <input className={css.searchBarInput} placeholder='Search' type="text" id='searchBar'
                 onChange={e => { 
                 dispatch(changeFilter(e.target.value))
-            }} />
+                }} />
+            <IoSearchCircle className={css.icon} />
         </div>
     )
 

@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.title {
+  font-size: 24px;
+  text-align: center;
+}
+.form {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.field {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.354);
+  border-radius: 3px;
+}
+
+.registerInfo {
+  font-size: 16px;
+}
+
+.btn {
+  border: 1px solid rgba(0, 0, 0, 0.354);
+  border-radius: 3px;
+  padding: 4px;
+  width: 60%;
+}
+
+.btn:hover {
+  color: rgb(214, 90, 46);
+  border-color: #d65a2e;
+}
+
+.field:hover {
+  border-color: rgb(214, 90, 46);
+}

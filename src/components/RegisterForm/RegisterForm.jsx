@@ -11,27 +11,24 @@ export default function RegisterForm() {
         actions.resetForm();
     }
     return (
+        <div className={css.wrapper}>
         <Formik
         initialValues={{
         name: "",
         email: "",
         password: ""
         }} onSubmit={handleSubmit}>
-            <Form>
-                <label>
-                    Name
-                    <Field type="name" name="name"></Field>
-                </label> 
-                <label>
-                    Email
-                    <Field type="email" name="email"></Field>
-                </label> 
-                 <label>
-                    Password
-                    <Field type="password" name="password"></Field>
-                </label> 
-                <button type='submit'>Register</button>
+            <Form className={css.form}>
+                <h1 className={css.title}>User Registration</h1>
+                <div className={css.fieldWrapper}>
+                    <Field placeholder="Name" className={css.field} type="name" name="name"></Field>
+                    <Field placeholder="Email" className={css.field} type="email" name="email"></Field>
+                    <Field placeholder="Password" className={css.field} type="password" name="password"></Field>
+                </div>
+                    
+                <button className={css.btn} type='submit'>Register</button>
             </Form>
         </Formik>
+        </div>
     )
 }
