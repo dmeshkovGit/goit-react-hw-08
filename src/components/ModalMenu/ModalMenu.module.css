@@ -43,6 +43,7 @@
   transition: transform 150ms ease-in-out;
   width: 25px;
   height: 25px;
+  color: black;
 }
 
 .wrapper {

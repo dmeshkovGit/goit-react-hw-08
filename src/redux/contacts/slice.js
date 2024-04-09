@@ -1,5 +1,5 @@
 import {createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact} from "./operations";
+import { fetchContacts, addContact, deleteContact, editContact} from "./operations";
 import { toast } from "react-hot-toast";
 
 const slice = createSlice({
@@ -7,7 +7,7 @@ const slice = createSlice({
     initialState: {
     items: [],
     loading: false,
-    error: null
+    error: null,
     },
     extraReducers: (builder) => 
         builder
@@ -53,7 +53,24 @@ const slice = createSlice({
                 state.loading = false;
                 state.error = true;
                 toast.error("Something went wrong(");
-            }),
+            })
+           .addCase(editContact.pending, (state) => {
+            state.error = false;
+            state.loading = true;
+           })
+            .addCase(editContact.fulfilled, (state, action) => {
+                state.loading = false;
+                const contactIndex = state.items.findIndex(
+                    (contact) => contact.id === action.payload.id);
+                state.items[contactIndex] = action.payload;
+                toast.success("Contact edited successfully");
+            })
+            .addCase(editContact.rejected, (state) => {
+                state.loading = false;
+                state.error = true;
+                toast.error("Something went wrong(");
+            })
+            ,
 });
 
 export default slice.reducer;

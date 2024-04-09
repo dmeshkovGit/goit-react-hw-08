@@ -1,30 +1,33 @@
 import css from './App.module.css'
-import { useEffect } from 'react'
-import ContactForm from '../ContactForm/ContactForm'
-import ContactList from '../ContactList/ContactList'
-import SearchBox from '../SearchBox/SearchBox'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchContacts } from '../../redux/contacts/operations'
-import Loader from '../Loader/Loader'
-import { selectError, selectLoading } from '../../redux/contacts/selectors'
-import { Toaster } from 'react-hot-toast'
+import { Suspense, lazy, useEffect } from 'react'
+import { useDispatch, useSelector} from 'react-redux'
 import { Routes, Route } from "react-router-dom";
-import LoginPage from "../../pages/LoginPage/LoginPage";
-import HomePage from "../../pages/HomePage/HomePage";
-import RegisterPage from "../../pages/RegisterPage/RegisterPage"
-import ContactsPage from "../../pages/ContactsPage/ContactsPage"
-import AppBar from '../AppBar/AppBar'
-import ModalMenu from '../ModalMenu/ModalMenu'
 import RestrictedRoute from '../RestrictedRoute/RestrictedRoute'
 import PrivateRoute from '../PrivateRoute/PrivateRoute'
+import { refreshUser } from '../../redux/auth/operations'
+import { selectIsRefreshing } from '../../redux/auth/selectors';
+import Layout from '../Layout/Layout';
+import Loader from '../Loader/Loader';
+
+const LoginPage =lazy(() =>  import("../../pages/LoginPage/LoginPage"));
+const HomePage =lazy(() =>  import("../../pages/HomePage/HomePage"));
+const RegisterPage = lazy(() => import("../../pages/RegisterPage/RegisterPage"));
+const ContactsPage = lazy(() => import("../../pages/ContactsPage/ContactsPage"));
+
+
 
 export default function App() {
+  const isRefreshing = useSelector(selectIsRefreshing)
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(refreshUser())
+  },[dispatch])
   
   return (
-    <div className={css.appWrapper}>
-      <AppBar/>
-
-      <Routes>
+    <Layout>
+      {isRefreshing ? (<div className={css.loaderWrapper}><Loader /></div>) : (
+        <Suspense fallback="null">
+        <Routes>
         <Route path='/' element={<HomePage />} />
 
         <Route path='/register' element={<RestrictedRoute component={<RegisterPage />} redirectTo='/' />} />
@@ -32,12 +35,10 @@ export default function App() {
         <Route path='/login' element={<RestrictedRoute component={<LoginPage />} redirectTo='/contacts' />} />
         
         <Route path='/contacts' element={<PrivateRoute component={<ContactsPage/>} redirectTo='/login'/>}/>
-      </Routes>
-      
-      <Toaster
-        position="top-right"
-        reverseOrder={false} />
-    </div>
+          </Routes>
+          </Suspense>
+      )}
+      </Layout>
   )
 }
 

@@ -34,3 +34,7 @@
   width: 25px;
   height: 25px;
 }
+
+.addContactBtn:hover {
+  color: rgb(214, 90, 46);
+}

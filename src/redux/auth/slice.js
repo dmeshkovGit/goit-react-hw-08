@@ -1,5 +1,5 @@
 import { toast } from "react-hot-toast";
-import { getUser, logIn, logOut, register } from "./operations";
+import { getUser, logIn, logOut, refreshUser, register } from "./operations";
 import {createSlice } from "@reduxjs/toolkit";
 
 
@@ -13,7 +13,7 @@ const slice = createSlice({
   },
   token: null,
   isLoggedIn: false,
-  isRefreshing: false,
+  isRefreshing: null,
   },
   extraReducers: (builder) => 
     builder
@@ -22,6 +22,9 @@ const slice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
         toast.success(`User ${action.payload.user.name} registered successfully`)
+      })
+      .addCase(register.rejected, () => {
+        toast.error(`Something went wrong, try again`)
       })
       .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
@@ -35,8 +38,19 @@ const slice = createSlice({
         state.isLoggedIn = false;
         toast.success(`Log out`)
       })
-      .addCase(getUser.fulfilled, (state, action) => {
-        console.log(action.payload);
+      .addCase(logIn.rejected, () => {
+        toast.error(`Something went wrong, try again`)
+      })
+      .addCase(refreshUser.pending, (state) => {
+        state.isRefreshing = true;
+      })
+      .addCase(refreshUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+      .addCase(refreshUser.rejected, () => {
+        toast.error(`Something went wrong, try to reload the page`)
       })
 })
 

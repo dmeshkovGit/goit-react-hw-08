@@ -39,6 +39,8 @@
   border-radius: 3px;
   padding: 4px;
   width: 60%;
+  background-color: rgb(217, 217, 217);
+  color: black;
 }
 
 .btn:hover {

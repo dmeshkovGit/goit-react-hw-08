@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 4px;
+  padding: 8px;
   border: 1px solid rgba(0, 0, 0, 0.354);
   border-radius: 3px;
 }
@@ -11,7 +11,8 @@
 .contactInfo {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  min-width: 270px;
 }
 
 .contactText {
@@ -19,6 +20,28 @@
   gap: 6px;
 }
 
-.deleteBtn {
+.contactIcon {
+  color: black;
+  width: 19px;
+  height: 19px;
+}
+.phoneIcon {
+  color: black;
+  width: 19px;
+  height: 17px;
+}
+.phoneLink {
+  text-decoration: none;
+  color: black;
+}
+
+.editBtn {
   height: 30px;
+  border: none;
+  background: transparent;
+}
+.editIcon {
+  color: black;
+  width: 22px;
+  height: 22px;
 }

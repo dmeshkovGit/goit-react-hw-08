@@ -28,20 +28,13 @@ export default function ContactForm({switchModal}) {
             <Form className={css.form}>
                 <div className={css.inputsWrap}>
                 <div className={css.inputWrapper}>
-                    <label className={css.inputLabel} htmlFor={nameFieldId}>Name</label>
-
-                    <Field className={css.input} type="text" name="contactName" id={nameFieldId}></Field>
-
+                    <Field className={css.input} placeholder="Name" type="text" name="contactName" id={nameFieldId}></Field>
                     <ErrorMessage className={css.error} name="contactName" component="span" />
                 </div>
                 <div className={css.inputWrapper}>
-
-                    <label className={css.inputLabel} htmlFor={numberFieldId}>Number</label>
-
-                    <Field className={css.input}  type="phone" name="contactNumber" id={numberFieldId}></Field>
-                    
-                        <ErrorMessage className={css.error} name="contactNumber" component="span" />  
-                    </div>    
+                    <Field className={css.input} placeholder="Phone" type="phone" name="contactNumber" id={numberFieldId}></Field>
+                    <ErrorMessage className={css.error} name="contactNumber" component="span" />  
+                </div>    
                  </div>
                 
                 
