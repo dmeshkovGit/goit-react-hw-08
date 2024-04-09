@@ -49,7 +49,8 @@ const slice = createSlice({
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
-      .addCase(refreshUser.rejected, () => {
+      .addCase(refreshUser.rejected, (state) => {
+        state.isRefreshing = false;
         toast.error(`Something went wrong, try to reload the page`)
       })
 })
