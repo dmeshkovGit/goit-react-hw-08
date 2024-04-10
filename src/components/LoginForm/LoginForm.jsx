@@ -2,7 +2,7 @@ import { Field, Form, Formik } from 'formik'
 import css from './LoginForm.module.css'
 import { useDispatch } from 'react-redux';
 import { logIn, logOut } from '../../redux/auth/operations';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 export default function LoginForm() {
@@ -26,7 +26,7 @@ export default function LoginForm() {
                     <Field placeholder="Email" className={css.field} type="email" name="email"/>
                     <Field placeholder="Password" className={css.field} type="password" name="password"/>
                     </div>
-        <p className={css.registerInfo}>Don't have an account yet? <Link to="/register">Create now</Link></p>
+        <p className={css.registerInfo}>Don't have an account yet? <NavLink to="/register">Create now</NavLink></p>
                 <button className={css.btn} type="submit">Login</button>
             </Form>
         </Formik>

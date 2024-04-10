@@ -1,15 +1,10 @@
-import { useSelector } from 'react-redux'
 import css from './Navigation.module.css'
-import { selectIsLoggedIn } from '../../redux/auth/selectors'
-import UserMenu from '../UserMenu/UserMenu';
-import AuthNav from '../AuthNav/AuthNav';
+import { FaCircleInfo } from "react-icons/fa6";
+import { NavLink } from 'react-router-dom'
 
-
-export default function Navigation({switchModalIsOpen}) {
-    
-    const isLoggedIn = useSelector(selectIsLoggedIn);
+export default function Navigation() {
 
     return (
-        <>{isLoggedIn ? <UserMenu switchModalIsOpen={switchModalIsOpen} /> : <AuthNav/>}</>
+        <div><NavLink to="/" className={css.homeLink}><FaCircleInfo className={css.appIcon} /></NavLink></div>
     )
 }
