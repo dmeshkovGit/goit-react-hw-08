@@ -28,7 +28,7 @@ export default function ContactsPage() {
           <button className={css.addContactBtn} onClick={()=>handleSwitchModal() } type='button'><IoPersonAdd className={css.addContactIcon} /></button>
       </div>
       <SearchBox />
-        {isLoading && <Loader/>}
+        {isLoading && <div className={css.loaderWrapper}><Loader /></div>}
         {isError ? <ErrorMessage /> : <ContactList />}
       <AddContactModal switchModal={handleSwitchModal} isOpen={modalIsOpen}/>
     </div> 

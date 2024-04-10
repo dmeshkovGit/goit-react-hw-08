@@ -9,7 +9,10 @@ export default function Layout({ children }) {
       {children}
       <Toaster
         position="top-center"
-        reverseOrder={false} />
+        reverseOrder={false}
+        toastOptions={{
+          duration: 1500,
+        }} />
     </div>
   );
 }

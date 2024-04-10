@@ -1,0 +1,13 @@
+.modalBtn {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+.userIcon {
+  width: 30px;
+  height: 30px;
+  color: black;
+}
+.userIcon:hover {
+  color: rgb(214, 90, 46);
+}

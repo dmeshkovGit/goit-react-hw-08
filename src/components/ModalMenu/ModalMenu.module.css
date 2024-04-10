@@ -47,41 +47,42 @@
 }
 
 .wrapper {
-  max-width: 194px;
+  width: 300px;
 }
 
 .userInfoWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 14px;
-  margin-top: 30px;
+  font-size: 18px;
+  margin-top: 40px;
 }
 
 .userIcon {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
 }
 
 .userName {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
 }
 
 .modalFuncList {
-  margin-top: 14px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid rgba(0, 0, 0, 0.354);
-  border-right: 1px solid rgba(0, 0, 0, 0.354);
-  border-left: 1px solid rgba(0, 0, 0, 0.354);
+  border-top: 2px solid rgba(0, 0, 0, 0.354);
+  border-right: 2px solid rgba(0, 0, 0, 0.354);
+  border-left: 2px solid rgba(0, 0, 0, 0.354);
   border-radius: 3px;
 }
 
 .modalFuncItem {
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.354);
-  font-size: 16px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.354);
+  font-size: 20px;
+  font-weight: 500;
   padding: 3px;
   background-color: rgba(108, 109, 111, 0.397);
 }
@@ -109,9 +110,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .icons {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }

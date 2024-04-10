@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
 import css from './AppBar.module.css'
-import { FaCircleUser } from "react-icons/fa6";
 import { useState } from 'react';
 import ModalMenu from '../ModalMenu/ModalMenu';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
-import { FiLogIn } from "react-icons/fi";
 import { FaCircleInfo } from "react-icons/fa6";
+import Navigation from '../Navigation/Navigation';
 
 export default function AppBar() {
   const isLoggedIn = useSelector(selectIsLoggedIn) 
@@ -22,7 +21,7 @@ export default function AppBar() {
                 
             <h1 className={css.title}>PhoneBook</h1>
                 
-            {isLoggedIn ? <button type='button' onClick={() => switchModalIsOpen()} className={css.modalBtn}><FaCircleUser className={css.userIcon} /></button> : <Link to='/login'><FiLogIn className={css.logInIcon} /></Link>}
+          <Navigation switchModalIsOpen={switchModalIsOpen} />
             
             </div>
             

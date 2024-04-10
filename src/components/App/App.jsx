@@ -17,7 +17,6 @@ const ContactsPage = lazy(() => import("../../pages/ContactsPage/ContactsPage"))
 
 
 export default function App() {
-  const isRefreshing = useSelector(selectIsRefreshing)
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(refreshUser())
@@ -25,8 +24,7 @@ export default function App() {
   
   return (
     <Layout>
-      {isRefreshing ? (<div className={css.loaderWrapper}><Loader /></div>) : (
-        <Suspense fallback="null">
+        <Suspense fallback={<div className={css.loaderWrapper}><Loader /></div>}>
         <Routes>
         <Route path='/' element={<HomePage />} />
 
@@ -37,7 +35,6 @@ export default function App() {
         <Route path='/contacts' element={<PrivateRoute component={<ContactsPage/>} redirectTo='/login'/>}/>
           </Routes>
           </Suspense>
-      )}
       </Layout>
   )
 }

@@ -32,14 +32,14 @@ const slice = createSlice({
         state.isLoggedIn = true;
         toast.success(`Welcome ${action.payload.user.name} !`)
       })
+      .addCase(logIn.rejected, () => {
+        toast.error(`Something went wrong, try again`)
+      })
       .addCase(logOut.fulfilled, (state) => {
         state.user = "";
         state.token = "";
         state.isLoggedIn = false;
         toast.success(`Log out`)
-      })
-      .addCase(logIn.rejected, () => {
-        toast.error(`Something went wrong, try again`)
       })
       .addCase(refreshUser.pending, (state) => {
         state.isRefreshing = true;
@@ -51,7 +51,7 @@ const slice = createSlice({
       })
       .addCase(refreshUser.rejected, (state) => {
         state.isRefreshing = false;
-        toast.error(`Something went wrong, try to reload the page`)
+        toast.error(`Unauthorized User, please log in`)
       })
 })
 

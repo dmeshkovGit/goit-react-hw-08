@@ -1,6 +1,7 @@
 import {createSlice } from "@reduxjs/toolkit";
 import { fetchContacts, addContact, deleteContact, editContact} from "./operations";
 import { toast } from "react-hot-toast";
+import { logOut } from "../auth/operations";
 
 const slice = createSlice({
     name: "contacts",
@@ -69,6 +70,9 @@ const slice = createSlice({
                 state.loading = false;
                 state.error = true;
                 toast.error("Something went wrong(");
+            })
+            .addCase(logOut.fulfilled, (state) => {
+                state.items = [];
             })
             ,
 });
