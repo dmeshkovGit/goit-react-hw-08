@@ -1,9 +1,43 @@
-.logInIcon:hover {
-  color: rgb(214, 90, 46);
+.navLink {
+  width: 30px;
+  height: 30px;
+  position: relative;
 }
+
 .logInIcon {
   width: 30px;
   height: 30px;
   color: black;
   padding: 0;
+}
+
+.regIcon {
+  width: 30px;
+  height: 30px;
+  color: black;
+  padding: 0;
+}
+
+.regIcon:hover,
+.logInIcon:hover {
+  color: rgb(214, 90, 46);
+}
+
+.authNavWrapper {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.isActive::after {
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  background-color: rgb(214, 90, 46);
+  border-radius: 5px;
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
 }

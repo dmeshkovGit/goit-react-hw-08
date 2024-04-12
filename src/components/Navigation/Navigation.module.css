@@ -2,12 +2,46 @@
   width: 0;
 }
 
-.appIcon {
+.appIcon,
+.contactsIcon {
   width: 30px;
   height: 30px;
   color: black;
 }
 
-.appIcon:hover {
+.appIcon {
+  padding: 1px;
+}
+
+.appIcon:hover,
+.contactsIcon:hover {
   color: rgb(214, 90, 46);
+}
+.authNavWrapper {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLink {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.isActive::after {
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  background-color: rgb(214, 90, 46);
+  border-radius: 5px;
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+
+.soloLink {
+  margin-right: 34px;
 }
